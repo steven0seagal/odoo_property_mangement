@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--MODEL MAIN VIEW    -->
+    <record id="property_action" model="ir.actions.act_window">
+        <field name="name">Property</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">property_management.property</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new property
+            </p>
+        </field>
+    </record>
+    <!-- List view for properties -->
+    <record model="ir.ui.view" id="property_property_list_view">
+        <field name="name">property_management.property.list</field>
+        <field name="model">property_management.property</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="address"/>
+                <field name="city"/>
+                <field name="state"/>
+                <field name="zip"/>
+                <field name="country"/>
+                <field name="property_type"/>
+                <field name="bedrooms"/>
+                <field name="bathrooms"/>
+                <field name="square_feet"/>
+                <field name="rent"/>
+            </tree>
+        </field>
+    </record>
+    <!-- Form view for creating and editing properties -->
+    <record model="ir.ui.view" id="property_property_form_view">
+        <field name="name">property_management.property.form</field>
+        <field name="model">property_management.property</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="image"/>
+                    <field name="address"/>
+                    <field name="city"/>
+                    <field name="state"/>
+                    <field name="zip"/>
+                    <field name="country"/>
+                    <field name="property_type"/>
+                    <field name="bedrooms"/>
+                    <field name="bathrooms"/>
+                    <field name="square_feet"/>
+                    <field name="rent"/>
+                    <field name="description"/>
+                </group>
+                <group>
+                    <field name="description"/>
+                </group>
+
+            </form>
+        </field>
+    </record>
+
+
+
+    <menuitem
+            id="property_root"
+            name="Property"
+            sequence="10"/>
+
+    <menuitem
+            id="property_management_root"
+            name="Property"
+            parent="property_root"
+            sequence="10"/>
+
+    <menuitem
+            id="property_management"
+            name="Property"
+            parent="property_root"
+            action="property_action"
+            sequence="10"/>
+
+
+
+
+</odoo>
