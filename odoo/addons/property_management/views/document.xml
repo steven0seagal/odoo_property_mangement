@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--MODEL MAIN VIEW    -->
+    <record id="document_action" model="ir.actions.act_window">
+        <field name="name">Document</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">promasy.document</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new document
+            </p>
+        </field>
+    </record>
+    <!-- List view for properties -->
+    <record model="ir.ui.view" id="property_document_list_view">
+        <field name="name">promasy.document.list</field>
+        <field name="model">promasy.document</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="property_id"/>
+                <field name="document_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view for creating and editing documents -->
+
+    <record model="ir.ui.view" id="property_document_form_view">
+        <field name="name">promasy.document.form</field>
+        <field name="model">promasy.document</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="file"/>
+                    <field name="property_id"/>
+                    <field name="document_type"/>
+                </group>
+                <group>
+                    <field name="description"/>
+                </group>
+
+            </form>
+        </field>
+    </record>
+
+
+    <menuitem
+        id="property_document_menu"
+        name="Documents"
+        parent="property_root"/>
+    <menuitem
+        id="property_document_menu_action"
+        name="Documents"
+        parent="property_document_menu"
+        action="document_action"
+
+    />
+</odoo>

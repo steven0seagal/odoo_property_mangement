@@ -52,7 +52,6 @@
                     <field name="bathrooms"/>
                     <field name="square_feet"/>
                     <field name="rent"/>
-                    <field name="description"/>
                 </group>
                 <group>
                     <field name="description"/>
