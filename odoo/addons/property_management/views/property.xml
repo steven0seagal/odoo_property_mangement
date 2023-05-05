@@ -4,7 +4,7 @@
     <record id="property_action" model="ir.actions.act_window">
         <field name="name">Property</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">property_management.property</field>
+        <field name="res_model">promasy.property</field>
         <field name="view_mode">tree,kanban,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
@@ -14,8 +14,8 @@
     </record>
     <!-- List view for properties -->
     <record model="ir.ui.view" id="property_property_list_view">
-        <field name="name">property_management.property.list</field>
-        <field name="model">property_management.property</field>
+        <field name="name">promasy.property.list</field>
+        <field name="model">promasy.property</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
             <tree>
@@ -35,14 +35,13 @@
     </record>
     <!-- Form view for creating and editing properties -->
     <record model="ir.ui.view" id="property_property_form_view">
-        <field name="name">property_management.property.form</field>
-        <field name="model">property_management.property</field>
+        <field name="name">promasy.property.form</field>
+        <field name="model">promasy.property</field>
         <field name="type">form</field>
         <field name="arch" type="xml">
             <form>
                 <group>
                     <field name="name"/>
-                    <field name="image"/>
                     <field name="address"/>
                     <field name="city"/>
                     <field name="state"/>

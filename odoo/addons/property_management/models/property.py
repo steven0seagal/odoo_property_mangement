@@ -3,11 +3,11 @@ from odoo import models, fields, api
 
 class Property(models.Model):
 
-    _name = 'property.property'
-    _description = 'Property Management Property'
+    _name = 'promasy.property'
+    _description = 'Property Management System'
 
     name = fields.Char(string='Name', required=True)
-    # image = fields.Binary(string='Image')
+    image = fields.Binary(string='Image')
     description = fields.Text(string='Description')
     address = fields.Char(string='Address')
     city = fields.Char(string='City')
@@ -25,7 +25,7 @@ class Property(models.Model):
     bathrooms = fields.Integer(string='Bathrooms')
     square_feet = fields.Integer(string='Square Feet')
     rent = fields.Float(string='Rent')
-    photo_ids = fields.Many2many('property.photo', string='Photos')
+    # photo_ids = fields.Many2many('property.photo', string='Photos')
     # tenant_id = fields.Many2one('res.partner', string='Tenant')
     # tenant_start_date = fields.Date(string='Tenant Start Date')
     # tenant_end_date = fields.Date(string='Tenant End Date')
