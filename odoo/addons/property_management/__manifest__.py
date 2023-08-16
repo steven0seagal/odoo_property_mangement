@@ -11,7 +11,8 @@
     'data': [
         'security/ir.model.access.csv',
         'views/property.xml',
-        'views/document.xml'
+        # 'views/document.xml',
+        # 'views/tenant.xml',
     ],
     'demo': [],
     'qweb': [],

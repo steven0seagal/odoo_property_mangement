@@ -1,7 +1,7 @@
 from odoo import models, fields, api
 
 
-class Property(models.Model):
+class RentalProperty(models.Model):
 
     _name = 'promasy.property'
     _description = 'Property Management System'
@@ -25,21 +25,15 @@ class Property(models.Model):
     bathrooms = fields.Integer(string='Bathrooms')
     square_feet = fields.Integer(string='Square Feet')
     rent = fields.Float(string='Rent')
-    # photo_ids = fields.Many2many('property.photo', string='Photos')
-    # tenant_id = fields.Many2one('res.partner', string='Tenant')
-    # tenant_start_date = fields.Date(string='Tenant Start Date')
-    # tenant_end_date = fields.Date(string='Tenant End Date')
-    # tenant_security_deposit = fields.Float(string='Tenant Security Deposit')
-    # tenant_security_deposit_refunded = fields.Boolean(string='Tenant Security Deposit Refunded')
-    # tenant_security_deposit_refunded_date = fields.Date(string='Tenant Security Deposit Refunded Date')
-    # tenant_security_deposit_refunded_amount = fields.Float(string='Tenant Security Deposit Refunded Amount')
-    # tenant_security_deposit_refunded_notes = fields.Text(string='Tenant Security Deposit Refunded Notes')
-    # tenant_security_deposit_refunded_by = fields.Many2one('res.partner', string='Tenant Security Deposit Refunded By')
-    # tenant_security_deposit_refunded_to = fields.Many2one('res.partner', string='Tenant Security Deposit Refunded To')
-    # tenant_security_deposit_refunded_check_number = fields.Char(string='Tenant Security Deposit Refunded Check Number')
-    # tenant_security_deposit_refunded_check_date = fields.Date(string='Tenant Security Deposit Refunded Check Date')
-    # tenant_security_deposit_refunded_check_amount = fields.Float(string='Tenant Security Deposit Refunded Check Amount')
-    # tenant_security_deposit_refunded_check_notes = fields.Text(string='Tenant Security Deposit Refunded Check Notes')
-    # tenant_security_deposit_refunded_check_by = fields.Many2one('res.partner', string='Tenant Security Deposit Refunded Check By')
-    # tenant_security_deposit_refunded_check_to = fields.Many2one('res.partner', string='Tenant Security Deposit Refunded')
-
+    amenities = fields.Text(string='Amenities')
+    deposit = fields.Float(string='Deposit Amount')
+    available_from = fields.Date(string='Available From')
+    status = fields.Selection([('available', 'Available'), ('rented', 'Rented'), ('maintenance', 'Under Maintenance')],
+                              string='Status', default='available')
+    image = fields.Binary(string='Property Image')
+    landlord_id = fields.Many2one('res.partner', string='Landlord', domain=[('is_landlord', '=', True)])
+    tenant_id = fields.Many2one('res.partner', string='Current Tenant', domain=[('is_tenant', '=', True)])
+    contract_id = fields.Many2one('promasy.contract', string='Current Contract')
+    utility_ids = fields.One2many('promasy.utility_usage', 'property_id', string='Utility Records')
+    maintenance_ids = fields.One2many('promasy.maintenance', 'property_id', string='Maintenance Records')
+    cleaning_ids = fields.One2many('promasy.cleaning', 'property_id', string='Cleaning Records')
