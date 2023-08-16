@@ -41,23 +41,40 @@
                     <field name="document_type"/>
                 </group>
                 <group>
-                    <field name="description"/>
+                    <field name="notes"/>
                 </group>
 
             </form>
         </field>
     </record>
 
+    <!-- Wizard for creating new documents -->
 
+    <record model="ir.actions.act_window" id="property_document_form_action">
+        <field name="name">Create new document</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">promasy.document</field>
+        <field name="view_mode">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create a new document
+            </p>
+        </field>
+    </record>
     <menuitem
         id="property_document_menu"
         name="Documents"
         parent="property_root"/>
     <menuitem
         id="property_document_menu_action"
-        name="Documents"
+        name="View all"
         parent="property_document_menu"
         action="document_action"
 
     />
+    <menuitem
+        id="property_document_menu_action_form"
+        name="Create new"
+        parent="property_document_menu"
+        action="property_document_form_action"/>
 </odoo>
