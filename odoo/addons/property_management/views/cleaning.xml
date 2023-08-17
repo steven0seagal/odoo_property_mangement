@@ -1,0 +1,51 @@
+<!--cleaning views-->
+
+<odoo>
+    <data>
+        <record id="view_cleaning_form" model="ir.ui.view">
+            <field name="name">cleaning.form</field>
+            <field name="model">promasy.cleaning</field>
+            <field name="arch" type="xml">
+                <form string="Cleaning">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="schedule_date"/>
+                            <field name="cleaning_type"/>
+                            <field name="cost"/>
+                            <field name="notes"/>
+                            <field name="property_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_cleaning_tree" model="ir.ui.view">
+            <field name="name">cleaning.tree</field>
+            <field name="model">promasy.cleaning</field>
+            <field name="arch" type="xml">
+                <tree string="Cleaning">
+                    <field name="name"/>
+                    <field name="schedule_date"/>
+                    <field name="cleaning_type"/>
+                    <field name="cost"/>
+                    <field name="notes"/>
+                    <field name="property_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_cleaning" model="ir.actions.act_window">
+            <field name="name">Cleaning</field>
+            <field name="res_model">promasy.cleaning</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="menu_cleaning" name="Cleaning" parent="property_root" sequence="10"/>
+        <menuitem id="menu_cleaning_config" name="Cleaning" parent="menu_cleaning" sequence="10"/>
+        <menuitem id="menu_cleaning_config" name="Cleaning" parent="menu_cleaning" sequence="10" action="action_cleaning"/>
+
+    </data>
+</odoo>

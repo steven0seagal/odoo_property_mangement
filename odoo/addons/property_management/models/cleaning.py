@@ -24,4 +24,5 @@ class PromasyCleaning(models.Model):
     assigned_to = fields.Many2one('res.users', string='Assigned To')
     notes = fields.Text(string='Notes')
     cost = fields.Float(string='Cost')
+
     # Other fields and relationships
