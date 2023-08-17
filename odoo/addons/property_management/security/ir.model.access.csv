@@ -6,3 +6,4 @@ access_promasy_contract,promasy.contract,model_promasy_contract,,1,1,1,1
 access_promasy_cleaning,promasy.cleaning,model_promasy_cleaning,,1,1,1,1
 access_promasy_contractor,promasy.contractor,model_promasy_contractor,,1,1,1,1
 access_promasy_payment,promasy.payment,model_promasy_payment,,1,1,1,1
+access_promasy_utility,promasy.utility,model_promasy_utility_usage,,1,1,1,1

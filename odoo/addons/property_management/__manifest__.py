@@ -20,6 +20,7 @@
         # 'views/owner.xml',
         # 'views/settings.xml',
         'views/payment.xml',
+        'views/utility.xml',
     ],
     'demo': [],
     'qweb': [],

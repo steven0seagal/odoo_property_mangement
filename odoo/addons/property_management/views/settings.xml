@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Extending the settings view to add your submenu -->
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">property.management.settings.view.form.inherit</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='settings']" position="inside">
+                <!-- The menu for the property management module settings -->
+                <div data-menu-xmlid="base.menu_property_management_settings" data-menu-name="Property Management" groups="group_system"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- The Property Management settings menu under the main settings -->
+    <menuitem id="menu_property_management_settings" name="Property Management" parent="base.menu_administration" sequence="15" groups="group_system"/>
+
+</odoo>

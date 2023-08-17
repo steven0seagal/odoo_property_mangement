@@ -8,7 +8,7 @@ class RentalOwner(models.Model):
     phone = fields.Char(string='Phone Number')
     address = fields.Text(string='Address')
     bank_account = fields.Char(string='Bank Account')
-    property_ids = fields.Many2many('promasy.property', string='Properties')
+    # property_ids = fields.Many2many('promasy.property', string='Properties')
     company_name = fields.Char(string='Company Name') # If the owner is a company
     id_type = fields.Selection([('passport', 'Passport'), ('id_card', 'ID Card')], string='ID Type')
     id_number = fields.Char(string='ID Number')

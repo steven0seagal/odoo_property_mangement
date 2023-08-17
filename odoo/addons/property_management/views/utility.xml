@@ -1,0 +1,47 @@
+<!--utility views-->
+
+<odoo>
+    <data>
+        <record id="view_utility_form" model="ir.ui.view">
+            <field name="name">utility.form</field>
+            <field name="model">promasy.utility_usage</field>
+            <field name="arch" type="xml">
+                <form string="Utility">
+                    <sheet>
+                        <group>
+                            <field name="utility_type"/>
+                            <field name="usage"/>
+                            <field name="notes"/>
+                            <field name="property_id"/>
+                            <field name="invoice_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_utility_tree" model="ir.ui.view">
+            <field name="name">utility.tree</field>
+            <field name="model">promasy.utility_usage</field>
+            <field name="arch" type="xml">
+                <tree string="Utility">
+                    <field name="utility_type"/>
+                    <field name="usage"/>
+                    <field name="notes"/>
+                    <field name="property_id"/>
+                    <field name="invoice_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_utility" model="ir.actions.act_window">
+            <field name="name">Utility</field>
+            <field name="res_model">promasy.utility_usage</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_utility" name="Utility" parent="property_root" sequence="10"/>
+        <menuitem id="menu_utility_config" name="Utility" parent="menu_utility" sequence="10"/>
+        <menuitem id="menu_utility_config" name="Utility" parent="menu_utility" sequence="10" action="action_utility"/>
+    </data>
+</odoo>
