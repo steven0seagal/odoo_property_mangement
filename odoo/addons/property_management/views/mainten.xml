@@ -1,0 +1,46 @@
+<!--maintenance view-->
+<odoo>
+    <data>
+        <record id="view_maintenance_form" model="ir.ui.view">
+            <field name="name">maintenance.form</field>
+            <field name="model">promasy.maintenance</field>
+            <field name="arch" type="xml">
+                <form string="Maintenance">
+                    <sheet>
+                        <group>
+                            <field name="property_id"/>
+                            <field name="assigned_to"/>
+                            <field name="request_date"/>
+                            <field name="cost"/>
+                            <field name="notes"/>
+                            <field name="status"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_maintenance_tree" model="ir.ui.view">
+            <field name="name">maintenance.tree</field>
+            <field name="model">promasy.maintenance</field>
+            <field name="arch" type="xml">
+                <tree string="Maintenance">
+                    <field name="property_id"/>
+                    <field name="assigned_to"/>
+                    <field name="request_date"/>
+                    <field name="cost"/>
+                    <field name="notes"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_maintenance" model="ir.actions.act_window">
+            <field name="name">Maintenance</field>
+            <field name="res_model">promasy.maintenance</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_maintenance" name="Maintenance" parent="property_root" sequence="10"/>
+
+        <menuitem id="menu_maintenance_action" name="Maintenance" parent="menu_maintenance" action="action_maintenance"/>
+    </data>
+</odoo>

@@ -16,6 +16,7 @@
         'views/contract.xml',
         'views/cleaning.xml',
         'views/contractor.xml',
+        'views/mainten.xml',
     ],
     'demo': [],
     'qweb': [],
