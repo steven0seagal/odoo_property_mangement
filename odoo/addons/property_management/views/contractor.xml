@@ -1,0 +1,46 @@
+<!--constructor view-->
+
+<odoo>
+        <record id="view_constructor_form" model="ir.ui.view">
+            <field name="name">constructor.form</field>
+            <field name="model">promasy.contractor</field>
+            <field name="arch" type="xml">
+                <form string="Constructor">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="address"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="notes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_constructor_tree" model="ir.ui.view">
+            <field name="name">constructor.tree</field>
+            <field name="model">promasy.contractor</field>
+            <field name="arch" type="xml">
+                <tree string="Constructor">
+                    <field name="name"/>
+                    <field name="address"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_constructor" model="ir.actions.act_window">
+            <field name="name">Constructor</field>
+            <field name="res_model">promasy.contractor</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_constructor" name="Constructor" parent="property_root" sequence="10"/>
+        <menuitem id="menu_constructor_config" name="Constructor" parent="menu_constructor" sequence="10"/>
+        <menuitem id="menu_constructor_config" name="Constructor" parent="menu_constructor" sequence="10" action="action_constructor"/>
+
+</odoo>

@@ -1,2 +1,2 @@
-from . import property, document, tenant, cleaning, constructor, contract, mainten, owner, utility, payments, \
+from . import property, document, tenant, cleaning, contractor, contract, mainten, owner, utility, payments, \
     property
