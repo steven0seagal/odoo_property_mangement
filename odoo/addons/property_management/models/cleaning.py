@@ -21,7 +21,7 @@ class PromasyCleaning(models.Model):
     ], string='Status', default='scheduled')
     schedule_date = fields.Date(string='Scheduled Date')
     completion_date = fields.Date(string='Completion Date')
-    assigned_to = fields.Many2one('res.users', string='Assigned To')
+    assigned_to = fields.Many2one('promasy.contractor', string='Assigned To')
     notes = fields.Text(string='Notes')
     cost = fields.Float(string='Cost')
 
