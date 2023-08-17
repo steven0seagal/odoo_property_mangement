@@ -30,5 +30,5 @@ class RentalPayment(models.Model):
         ('failed', 'Failed')
     ], string='Status', default='pending')
     notes = fields.Text(string='Notes')
-    invoice_id = fields.Many2one('account.move', string='Invoice')
+    invoice_id = fields.Many2one('promasy.document', string='Invoice')
     # Other fields and relationships

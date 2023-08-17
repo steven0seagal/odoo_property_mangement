@@ -5,4 +5,4 @@ access_promasy_tenant,promasy.tenant,model_promasy_tenant,,1,1,1,1
 access_promasy_contract,promasy.contract,model_promasy_contract,,1,1,1,1
 access_promasy_cleaning,promasy.cleaning,model_promasy_cleaning,,1,1,1,1
 access_promasy_contractor,promasy.contractor,model_promasy_contractor,,1,1,1,1
-access_promasy_maintenance,promasy.maintenance,model_promasy_maintenance,,1,1,1,1
+access_promasy_payment,promasy.payment,model_promasy_payment,,1,1,1,1

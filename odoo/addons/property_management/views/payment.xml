@@ -1,0 +1,51 @@
+<!--payment views-->
+
+<odoo>
+    <data>
+        <record id="view_payment_form" model="ir.ui.view">
+            <field name="name">payment.form</field>
+            <field name="model">promasy.payment</field>
+            <field name="arch" type="xml">
+                <form string="Payment">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="payment_date"/>
+                            <field name="payment_type"/>
+                            <field name="amount"/>
+                            <field name="notes"/>
+                            <field name="property_id"/>
+                            <field name="invoice_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_payment_tree" model="ir.ui.view">
+            <field name="name">payment.tree</field>
+            <field name="model">promasy.payment</field>
+            <field name="arch" type="xml">
+                <tree string="Payment">
+                    <field name="name"/>
+                    <field name="payment_date"/>
+                    <field name="payment_type"/>
+                    <field name="amount"/>
+                    <field name="notes"/>
+                    <field name="property_id"/>
+                    <field name="invoice_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_payment" model="ir.actions.act_window">
+            <field name="name">Payment</field>
+            <field name="res_model">promasy.payment</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_payment" name="Payment" parent="property_root" sequence="10"/>
+        <menuitem id="menu_payment_config" name="Payment" parent="menu_payment" sequence="10"/>
+        <menuitem id="menu_payment_config" name="Payment" parent="menu_payment" sequence="10" action="action_payment"/>
+    </data>
+</odoo>
