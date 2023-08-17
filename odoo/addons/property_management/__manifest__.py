@@ -13,6 +13,7 @@
         'views/property.xml',
         'views/document.xml',
         'views/tenant.xml',
+        'views/contract.xml',
     ],
     'demo': [],
     'qweb': [],

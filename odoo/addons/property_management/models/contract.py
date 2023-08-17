@@ -18,6 +18,12 @@ class RentalContract(models.Model):
         ('quarterly', 'Quarterly'),
         ('annually', 'Annually')
     ], string='Payment Frequency', required=True)
+    payment_method = fields.Selection([
+        ('cash', 'Cash'),
+        ('cheque', 'Cheque'),
+        ('bank_transfer', 'Bank Transfer')
+    ], string='Payment Method', required=True)
+    payment_date = fields.Date(string='Payment Date')
     utility_included = fields.Boolean(string='Utilities Included')
     status = fields.Selection([
         ('draft', 'Draft'),
